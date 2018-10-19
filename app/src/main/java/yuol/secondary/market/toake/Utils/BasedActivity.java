@@ -41,7 +41,7 @@ public class BasedActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        //页面在后台的时候接触注册的广播
+        //页面在后台的时候解除注册的广播
         if(receiver != null){
             //这里将receiver置为空，自我感觉是为了防止未调用onResume()方法直接调用onPause()的情况
             manager.unregisterReceiver(receiver);

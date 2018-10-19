@@ -24,14 +24,15 @@ import yuol.secondary.market.toake.Utils.NetworkUtils;
 
 public class AutoUpdate {
     private static final String TAG="AutoUpdate";
+    public static boolean state = false;//用于外界获取更新状态
 
     //发送请求，获取包含版本信息的xml文件
     public static void Update(final Context context, final LocalBroadcastManager LBmanager){
 
-        NetworkUtils.request("http://192.168.137.1/update.xml", new okhttp3.Callback() {
+        NetworkUtils.request("http://192.168.137.1/taoke/update.xml", new okhttp3.Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                LogUtil.d(TAG,"更新失败");
+                LogUtil.d(TAG,"网络链接失败");
             }
 
             @Override
@@ -54,16 +55,19 @@ public class AutoUpdate {
                 //判断是否有版本更新
                if(!versionInfo.get(0).equals(versionNow)){
                    Intent intent = new Intent("yuol.secondary.market.toake.update");
+                   state = true;
                    intent.putExtra("state",true);
                    intent.putExtra("url",versionInfo.get(2));
                    LBmanager.sendBroadcast(intent);
                }else{
                    Intent intent = new Intent("yuol.secondary.market.toake.update");
-                   intent.putExtra("state","false");
+                   intent.putExtra("state",false);
                    LBmanager.sendBroadcast(intent);
                }
             }
         });
+
+
     }
 
     private static List<String> parseXML(String content){
