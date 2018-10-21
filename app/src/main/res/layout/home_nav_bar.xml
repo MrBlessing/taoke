@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:background="#aa3d63ec"
+    android:orientation="horizontal"
+    android:layout_alignParentBottom="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            style="@style/nav_image"
+            android:src="@drawable/home"/>
+        <TextView
+            style="@style/nav_text"
+            android:text="首页"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            style="@style/nav_image"
+            android:src="@drawable/release"/>
+        <TextView
+            style="@style/nav_text"
+            android:text="发布"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <ImageView
+            style="@style/nav_image"
+            android:src="@drawable/personal_center"/>
+        <TextView
+            style="@style/nav_text"
+            android:text="个人"/>
+    </LinearLayout>
+
+
+</LinearLayout>

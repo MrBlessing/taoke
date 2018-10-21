@@ -22,7 +22,6 @@ import java.util.List;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
-import yuol.secondary.market.toake.Utils.ActivityCollector;
 import yuol.secondary.market.toake.Utils.BasedActivity;
 import yuol.secondary.market.toake.Utils.FileUtils;
 import yuol.secondary.market.toake.Utils.NetworkUtils;
@@ -30,14 +29,14 @@ import yuol.secondary.market.toake.Utils.NetworkUtils;
 public class StartActivity extends BasedActivity {
 
     //限时跳转
-    private CountDownTimer timer = new CountDownTimer(3000,1000) {
+    private CountDownTimer timer = new CountDownTimer(300,1000) {
         @Override
         public void onTick(long l) {
 
         }
         @Override
         public void onFinish() {
-            Intent intent = new Intent(StartActivity.this,MainActivity.class);
+            Intent intent = new Intent(StartActivity.this,HomePage.class);
             startActivity(intent);
             finish();
         }
