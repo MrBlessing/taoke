@@ -18,7 +18,7 @@ import java.util.List;
 
 import yuol.secondary.market.toake.R;
 
-public class homeFragment extends Fragment {
+public class HomeFragment extends Fragment {
     private View view;
     private ConvenientBanner convenientBanner;
 

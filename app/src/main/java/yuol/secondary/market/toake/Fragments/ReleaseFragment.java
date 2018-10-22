@@ -7,11 +7,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import yuol.secondary.market.toake.R;
-public class personalCenterFragment extends Fragment {
+
+
+public class ReleaseFragment extends Fragment {
+
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_personal_center, container, false);
+
+        return inflater.inflate(R.layout.fragment_release, container, false);
     }
 }

@@ -6,13 +6,21 @@
     tools:context=".HomePage">
 
 
-    <include layout="@layout/home_nav_bar"></include>
-
-    <fragment
-        android:id="@+id/home_fragment"
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+        android:id="@+id/home_page_bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:name="yuol.secondary.market.toake.Fragments.homeFragment"/>
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+    </com.ashokvarma.bottomnavigation.BottomNavigationBar>
+
+
+    <FrameLayout
+        android:id="@+id/home_page_container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
 
 
 </RelativeLayout>
