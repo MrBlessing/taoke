@@ -30,7 +30,7 @@ public class StartActivity extends BasedActivity {
 
 
     //限时跳转
-    private CountDownTimer timer = new CountDownTimer(3000,3000) {
+    private CountDownTimer timer = new CountDownTimer(300,3000) {
         @Override
         public void onTick(long l) {
 
