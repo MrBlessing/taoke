@@ -22,167 +22,184 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.CardView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:elevation="5dp"
-            app:cardCornerRadius="5dp">
+            android:layout_height="wrap_content">
 
+            <LinearLayout
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+               <RelativeLayout
+                   android:orientation="vertical"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <EditText
+                       android:layout_width="match_parent"
+                       android:layout_height="50dp"
+                       android:layout_centerInParent="true"
+                       android:layout_marginBottom="15dp"
+                       style="@style/release_EditText"
+                       android:hint="标题"/>
+
+                   <View
+                       android:layout_alignParentBottom="true"
+                       android:layout_width="match_parent"
+                       android:layout_height="1dp"
+                       style="@style/Cutting_line"/>
+
+               </RelativeLayout>
+
+               <EditText
+                   android:layout_width="match_parent"
+                   android:layout_height="150dp"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginBottom="10dp"
+                   style="@style/release_EditText"
+                   android:gravity="top"
+                   android:hint="商品描述"/>
+
+               <View
+                   android:layout_width="match_parent"
+                   android:layout_height="1dp"
+                   style="@style/Cutting_line">
+
+               </View>
+
+               <ImageView
+                   android:layout_width="50dp"
+                   android:layout_height="50dp"
+                   android:layout_margin="12dp"
+                   android:src="@drawable/add"
+                   android:background="#999999"/>
+               <LinearLayout
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <TextView
+                       android:layout_margin="10dp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="定位"/>
+               </LinearLayout>
+           </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                style="@style/Cutting_line"/>
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="@style/release_text"
-                        android:text="商品标签"/>
-
-
-                </LinearLayout>
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="商品描述:"
-                        style="@style/release_text" />
-                <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="150dp"
-                        style="@style/release_TextEdit_container">
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="150dp"
-                            android:gravity="top"
-                            android:textSize="15sp"
-                            android:background="@null"
-                            android:hint="描述一下你的商品！"/>
-                    </FrameLayout>
-
-                <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="@style/release_text"
-                        android:text="QQ:"/>
-                <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        style="@style/release_TextEdit_container">
-                        <EditText
-                            android:layout_width="match_parent"
-                            android:layout_height="35dp"
-                            android:inputType="number"
-                            android:background="@null"
-                            android:hint="你的QQ!"/>
-                    </FrameLayout>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:text="请选择要上传的图片"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="(限定五张，推送只会显示前两张，请谨慎选择)"/>
-
-                <include layout="@layout/release_image_upload"></include>
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="50dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="@style/release_text"
-                        android:layout_gravity="left"
-                        android:text="新旧程度自评"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="@style/release_text"
-                        android:text="是否议价"/>
-
-                    <com.kyleduo.switchbutton.SwitchButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginLeft="150dp"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        style="@style/release_text"
-                        android:text="库存数量"/>
-
-                    <FrameLayout
-                        android:layout_width="45dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginLeft="150dp"
-                        style="@style/release_TextEdit_container"
-                        android:padding="0dp">
-                        <EditText
-                            android:hint="   件"
-                            android:layout_width="45dp"
-                            android:layout_height="40dp"
-                            android:background="@null"/>
-                    </FrameLayout>
-
-                </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/release_text"
-                    android:text="售后承诺:"/>
-
-                <FrameLayout
+                    android:text="商品详情" />
+                <View
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    style="@style/release_TextEdit_container"
-                    android:layout_marginBottom="100dp">
-                    <EditText
+                    android:layout_height="1dp"
+                    style="@style/Cutting_line"/>
+
+                <RelativeLayout
+                    android:id="@+id/fragment_release_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        style="@style/release_text"
+                        android:text="价格" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        style="@style/release_text"
+                        android:src="@drawable/left_nav"/>
+
+                    <View
                         android:layout_width="match_parent"
-                        android:layout_height="200dp"
-                        android:gravity="top"
-                        android:background="@null"
-                        android:hint="你想说点啥!"/>
-                </FrameLayout>
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        style="@style/Cutting_line"/>
 
 
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/fragment_release_sort"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/release_sort_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        style="@style/release_text"
+                        android:text="分类" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        style="@style/release_text"
+                        android:src="@drawable/left_nav"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        style="@style/Cutting_line"/>
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/fragment_release_number"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        style="@style/release_text"
+                        android:text="库存" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        style="@style/release_text"
+                        android:src="@drawable/left_nav"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_alignParentBottom="true"
+                        style="@style/Cutting_line"/>
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="100dp"/>
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+
+        </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 </android.support.design.widget.CoordinatorLayout>
