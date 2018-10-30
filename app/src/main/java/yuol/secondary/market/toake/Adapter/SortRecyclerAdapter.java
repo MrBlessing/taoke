@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -21,7 +22,7 @@ public class SortRecyclerAdapter extends RecyclerView.Adapter<SortRecyclerAdapte
     @NonNull
     @Override
     public LocalHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_release_sort_item,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.popup_release_sort_item,viewGroup,false);
         return new LocalHolder(view);
     }
 
@@ -37,9 +38,11 @@ public class SortRecyclerAdapter extends RecyclerView.Adapter<SortRecyclerAdapte
 
     class LocalHolder extends RecyclerView.ViewHolder {
         TextView tag;
+        LinearLayout container;
         LocalHolder(@NonNull View itemView) {
             super(itemView);
-            tag = itemView.findViewById(R.id.item_release_sort_item_tag);
+            tag = itemView.findViewById(R.id.popup_release_sort_item_tag);
+            container=itemView.findViewById(R.id.popup_release_sort_item_container);
         }
     }
 }

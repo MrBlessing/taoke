@@ -14,20 +14,17 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.Response;
 import yuol.secondary.market.toake.Utils.BasedActivity;
-import yuol.secondary.market.toake.Utils.FileUtils;
+import yuol.secondary.market.toake.Utils.LogUtil;
 import yuol.secondary.market.toake.Utils.NetworkUtils;
+import yuol.secondary.market.toake.bean.ImageUrl;
 
 public class StartActivity extends BasedActivity {
-
 
     //限时跳转
     private CountDownTimer timer = new CountDownTimer(300,3000) {
@@ -42,41 +39,39 @@ public class StartActivity extends BasedActivity {
             finish();
         }
     };
-    private ImageView image;
+    private static final String TAG = "StartActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
-        loadImage();
+        load();
+        LogUtil.d(TAG, PreferenceManager.getDefaultSharedPreferences(this).getString("Json_imageUrl","null"));
+        loadStartImage();
         applyForPermission();
     }
-    private void loadImage() {
-        //从服务端获取图片地址
-        NetworkUtils.request("http://192.168.137.1/taoke/start_image.conf", new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(StartActivity.this, "图片加载失败", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                FileUtils.saveByPeference(StartActivity.this,"start_image",response.body().string());
-            }
-        });
-        //加载图片
-        String imageUrl = "http://192.168.137.1/taoke/" + PreferenceManager.getDefaultSharedPreferences(this).getString("start_image","start.png");
-        image = findViewById(R.id.start_image);
-        Glide.with(this)
-                .load(imageUrl)
-                .into(image);
+    private void loadStartImage() {
+        ImageView image = findViewById(R.id.start_image);
+        //获得已经储存好的json数据
+        String json = PreferenceManager.getDefaultSharedPreferences(this).getString("Json_imageUrl",null);
+        if(json!=null){
+            //解析json数据
+            Gson gson = new Gson();
+            ImageUrl imageUrl = gson.fromJson(json,ImageUrl.class);
+            Glide.with(this)
+                    .load(imageUrl.getStart())
+                    .into(image);
+        }else {
+            //保存的数据为空的话再次请求一遍数据
+            NetworkUtils.loadJsonImageUrl();
+        }
     }
 
+    private void load() {
+        ////提前加载图片Json数据,并保存
+        NetworkUtils.loadJsonImageUrl();
+    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

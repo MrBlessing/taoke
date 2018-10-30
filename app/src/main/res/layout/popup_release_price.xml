@@ -16,17 +16,17 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:text="价格"
-            style="@style/item_release_price_text" />
+            style="@style/popup_release_price_text" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/item_release_price_price"
-            style="@style/item_release_price_text"
+            android:layout_toLeftOf="@id/popup_release_price_inputPrice"
+            style="@style/popup_release_price_text"
             android:text="￥" />
 
         <EditText
-            android:id="@+id/item_release_price_price"
+            android:id="@+id/popup_release_price_inputPrice"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_centerInParent="true"
@@ -36,7 +36,7 @@
             android:inputType="number"/>
 
         <CheckBox
-            android:id="@+id/item_release_price_discuss"
+            android:id="@+id/popup_release_price_discuss"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginTop="10dp"
@@ -46,8 +46,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/item_release_price_discuss"
-            style="@style/item_release_price_text"
+            android:layout_toLeftOf="@id/popup_release_price_discuss"
+            style="@style/popup_release_price_text"
             android:text="不议价"/>
 
     </RelativeLayout>
@@ -63,18 +63,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            style="@style/item_release_price_text"
+            style="@style/popup_release_price_text"
             android:text="入手价" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/item_release_price_firstPrice"
-            style="@style/item_release_price_text"
+            android:layout_toLeftOf="@id/popup_release_price_inputFirstPrice"
+            style="@style/popup_release_price_text"
             android:text="￥" />
 
         <EditText
-            android:id="@+id/item_release_price_firstPrice"
+            android:id="@+id/popup_release_price_inputFirstPrice"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:layout_centerInParent="true"
@@ -84,6 +84,7 @@
 
     </RelativeLayout>
     <Button
+        android:id="@+id/popup_release_price_submit"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_gravity="right"

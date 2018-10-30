@@ -1,38 +1,33 @@
 package yuol.secondary.market.toake.Fragments;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import yuol.secondary.market.toake.Adapter.SortRecyclerAdapter;
+import yuol.secondary.market.toake.Login;
 import yuol.secondary.market.toake.R;
 import yuol.secondary.market.toake.Utils.ActivityCollector;
 
 public class PersonalCenterFragment extends Fragment {
 private View view;
+private Context context= ActivityCollector.currentActivity();
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view=inflater.inflate(R.layout.fragment_personal_center, container, false);
-        RecyclerView recyclerView = view.findViewById(R.id.recycler);
-        List<String> data = new ArrayList<>();
-        data.add("a");
-        data.add("b");
-        data.add("c");
-        data.add("a");
-        data.add("b");
-        LinearLayoutManager manager1 = new LinearLayoutManager(ActivityCollector.currentActivity());
-        manager1.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(manager1);
-        recyclerView.setAdapter(new SortRecyclerAdapter(data));
+        final ImageView imageView = view.findViewById(R.id.fragment_personal_center_headPortrait);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, Login.class);
+                context.startActivity(intent);
+            }
+        });
         return view;
     }
 

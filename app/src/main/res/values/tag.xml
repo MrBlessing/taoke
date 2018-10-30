@@ -32,10 +32,26 @@
         <item name="android:textSize">15sp</item>
     </style>
 
-    <style name="item_release_price_text">
+    <style name="popup_release_price_text">
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginBottom">10dp</item>
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="fragment_personal_center_top">
+        <item name="android:background">@drawable/corner</item>
+        <item name="android:layout_marginBottom">15dp</item>
+        <item name="android:layout_height">35dp</item>
+    </style>
+
+    <style name="fragment_personal_center_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="mainColor">
+        <item name="android:background">#f96968</item>
     </style>
 
 </resources>

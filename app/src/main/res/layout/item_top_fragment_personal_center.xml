@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            style="@style/fragment_personal_center_top">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="15sp"
+                android:text="我发布的"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            style="@style/fragment_personal_center_top">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="15sp"
+                android:text="个人资料"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="110dp"
+            style="@style/fragment_personal_center_top">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="15sp"
+                android:text="设置"/>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/fragment_personal_center_headPortrait"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/head_portrait"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="120dp"
+            style="@style/fragment_personal_center_top"
+            android:layout_gravity="right">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="15sp"
+                android:text="交易记录"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="100dp"
+            style="@style/fragment_personal_center_top"
+            android:layout_gravity="right">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="15sp"
+                android:text="系统消息"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="110dp"
+            style="@style/fragment_personal_center_top"
+            android:layout_gravity="right">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="15sp"
+                android:text="留言"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>
